@@ -1,0 +1,206 @@
+\documentclass[10pt]{beamer}
+\usetheme[left]{AAUsidebar}
+
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+% Change the bar and sidebar colors:
+\setbeamercolor{AAUsidebar}{fg=red!20,bg=red}
+%\setbeamercolor{sidebar}{bg=red!20}
+% Change the color of the structural elements:
+\setbeamercolor{structure}{fg=red}
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+% Change the normal text color background:
+\setbeamercolor{normal text}{bg=gray!10}
+% ... and you can of course change a lot more - see the beamer user manual.
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\usepackage{helvet}
+
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+  \href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+
+\title[Cache y Referencias Cruzadas]% optional, use only with long paper titles
+{Cache y Referencias Cruzadas} % lo que se ve en la presentacion
+\subtitle{Capitulo 8, 9}  % could also be a conference name
+%\subtitle{v.\ 1.4.0}  % could also be a conference name
+
+\date{%\today
+	}
+
+\author[Wilmar Diaz Rodriguez] % optional, use only with lots of authors
+{
+  Wilmar Diaz Rodriguez \\    %lo que se ve en la plantilla 
+  \href{mailto:wilmardiazr@gmail.com}{{\tt wilmardiazr@gmail.com}}
+}
+% - Give the names in the same order as they appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation. See the beamer manual for an example
+
+\institute[
+%  {\includegraphics[scale=0.2]{aau_segl}}\\ %insert a company, department or university logo
+  Universidad Distrital Francisco José de Caldas\\
+  Maestría en CIC\\
+  Tendencias en IS\\
+  Bogotá DC, 16 de Abril
+] % optional - is placed in the bottom of the sidebar on every slide
+{% is placed on the title page
+  Universidad Distrital Francisco José de Caldas\\
+  Maestría en Ciencias de la información y las comunicaciones\\
+  Tendencias en Ingeniería de Software\\
+  Bogotá DC, 16 de Abril 2016
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+
+% specify a logo on the titlepage (you can specify additional logos an include them in 
+% institute command below
+\pgfdeclareimage[height=3.5cm]{titlepagelogo}{AAUgraphics/escudoudblancoynegro} % placed on the title page
+\pgfdeclareimage[height=3.5cm]{titlepagelogo2}{AAUgraphics/logoMCIC} % placed
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{graphics/aau_logo_new} % placed on the title page
+\titlegraphic{% is placed on the bottom of the title page
+  \pgfuseimage{titlepagelogo}
+ \hspace{1cm}\pgfuseimage{titlepagelogo2}
+%  \hspace{1cm}\pgfuseimage{titlepagelogo2}
+}
+
+
+\begin{document}
+% the titlepage
+{\aauwavesbg%
+\begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
+  \titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%%
+
+% TOC
+\begin{frame}{Agenda}{}
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\section{Cache}
+\begin{frame}{Cache}{}
+	La presente sección trata acerca del capítulo 8 del libro "\alert{Dynamic Documents with R and knitr}" 
+	\begin{itemize}
+		\item<1-> ¿Que entiende usted por cache?
+		\item<2-> Ventajas y Desventajas
+		\item<3-> Como Implemntarlo
+		\item<4-> ¿Que ocurre cuando se escribe el Cache?
+	\end{itemize}
+\end{frame}
+
+
+\subsection{¿Que entiende usted por cache?}
+
+\begin{frame}{Cache}{¿Que entiende usted por cache?}
+	\begin{block}{Uso}
+		Generalmente  todo tipo de aplicaciones usan cahe por ejemplo las bases de datos, un visor de mapas en linea, etc.
+	\end{block}
+\end{frame}
+
+
+
+\subsection{Ventajas y Desventajas}
+
+\begin{frame}{Cache}{Ventajas y Desventajas}
+	\begin{block}{ventajas}
+		\begin{enumerate}
+			\item {\tt tiempos de ejecucion}
+			\item {\tt reprocesamiento}
+			\item {\tt otras}
+		\end{enumerate}
+	\end{block}
+	\begin{block}{desventajas}
+		\begin{enumerate}
+			\item {\tt errores en los resultados esperados}
+			\item {\tt requiere incluir algunos tipos de referencias para el calculo correcto del hash}
+			\item {\tt otras}
+		\end{enumerate}
+	\end{block}
+		
+\end{frame}
+
+\subsection{Como Implemntarlo}
+\begin{frame}{Cache}{Como Implemntarlo}
+	\begin{block}{Como Implemntarlo}
+		para implementar el cache en nuestros chunk de codigo podemos realizando cambiando las opciones en nuestro archivo rnw por medio de la opción cache=TRUE, cache=FALSE
+		
+	\end{block}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%
+\section{Referencias Cruzadas}
+\begin{frame}{Referencias Cruzadas}{}
+	La presente sección trata acerca del capítulo 9 del libro "\alert{Dynamic Documents with R and knitr}" 
+	\begin{itemize}
+		\item<1-> Codigo embebido dentro de retazos de codigo
+		\item<2-> Cogigos Externos
+		\item<3-> Rehuso de Codigo
+		\item<4-> 
+	\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%
+
+\section{Creditos }
+\subsection{Bibliografia}
+
+	
+
+% known problems
+\begin{frame}{Creditos}{Bibliografia}
+	\begin{block}{Bibliografia}
+		\begin{enumerate}
+			\item {Libro: "Dynamic Documentswith R and knitr"
+				 \\Second Edition
+				 \\Autor:Yihui Xie
+				 }
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\subsection{Aportes}
+% help me iron out the bugs or give me some comment and suggestions
+\begin{frame}{Creditos}{Aportes}
+	\begin{block}{Aportes}
+		\begin{enumerate}
+			\item {\tt Raul Alejandro Buitrago Castellanos Plantilla}
+			\item {\tt Leonel Muñoz Cedano Modificaciones cargue de Logos}
+			\item {\tt Jose Nelson Pérez Castillos Libros documentos inicales }
+		\end{enumerate}
+	\end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\subsection{Información de Contacto}
+% contact information
+\begin{frame}{Creditos}{Información de Contacto}
+En caso de que tenga comentarios sugerencias o crea que se requiera algún tipo de correcciones por favor no dude en contactarme, si se requiere el código usado o quiere descargar los ejemplos puede conectarse al repositorio de github, a los datos que aparecen al final.
+  \begin{center}
+    \insertauthor\\
+	Repositorio de presentacion y ejemplos\\
+    \chref{https://github.com/djlocus/tendencias.git}{https://github.com/djlocus/tendencias.git}
+    
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+  \finalpage{Gracias por la Atención Prestada!}
+\end{frame}}
+%%%%%%%%%%%%%%%%
+
+\end{document}
